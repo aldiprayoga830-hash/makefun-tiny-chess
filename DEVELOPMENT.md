@@ -18,6 +18,14 @@ working session, then compressed into the 4 KB entrypoint.
 - Determinism: a fixed node budget per move (130,000) and no clock
   reads anywhere, so a game replays exactly.
 
+## Protocol
+
+The driver loop is part of the packed code: it POSTs to the
+environment's `/game` endpoint, and while the status is `your_move`
+it computes a move and POSTs it to `/move` as UCI (castling as the
+king's move, promotions with a lowercase suffix). It keeps the game's
+position history so the search can score repetitions as draws.
+
 ## Packing
 
 The readable source is compressed with lzma (FORMAT_ALONE, tuned

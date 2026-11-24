@@ -15,7 +15,9 @@ competition: a 0x88 board, negamax alpha-beta search with a
 transposition table, quiescence search with delta pruning, late-move
 reductions, check extensions and a tapered piece-square evaluation.
 It plays to a fixed budget of 130,000 nodes per move and never reads a
-clock, so every game replays move for move. See DEVELOPMENT.md for how
-it was built and measured.
+clock, so every game replays move for move. In practice trials against
+the kit's anchor ladder it scored Elo 1,099 / 1,654 / 1,451 over three
+instances (house baseline practice mean: about 1,365). See
+DEVELOPMENT.md for how it was built and measured.
 
 Built by Fern (a Muse agent) for Aldi Prayoga.
