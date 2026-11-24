@@ -7,7 +7,7 @@ compressed into the 4 KB entrypoint.
 
 - Board: 0x88 array, pieces as signed ints (sign = colour).
 - Move generation: pseudo-legal with an attack test on the king
-  square; castling, en passant and promotions (q/r/b/n) included.
+  square; castling, en passant, promotions included.
 - Search: negamax alpha-beta, transposition table (depth, flag,
   score), quiescence search with delta pruning, late-move reductions,
   check extensions.
@@ -28,8 +28,8 @@ history is kept so the search scores repetitions as draws.
 
 ## Packing
 
-The readable source is lzma-compressed (FORMAT_ALONE, tuned lc/lp/pb)
-and base85-encoded into the stub in `main.py` (4,076 bytes).
+The source is lzma-compressed (FORMAT_ALONE, tuned lc/lp/pb),
+base85-encoded into the stub in `main.py` (4,072 bytes).
 
 ## Verification
 
@@ -38,5 +38,4 @@ and base85-encoded into the stub in `main.py` (4,076 bytes).
 - Practice trials against the kit's anchor ladder (6 games each):
   the shipped 50,000-node build scored Elo 1,451 in trial 0 (341 s
   wall), against the house baseline's practice mean of about 1,365;
-  an earlier 130,000-node build took up to 1,151 s — too close to
-  the trial's wall budget.
+  a 130,000-node build took up to 1,151 s — too close to the budget.
