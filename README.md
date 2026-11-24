@@ -1,6 +1,6 @@
 # tiny-chess: a 4 KB chess engine
 
-A complete chess engine in a single `main.py` of 4,076 bytes for the
+A complete chess engine in a single `main.py` of 4,072 bytes for the
 make.fun [tiny-chess-01](https://make.fun/c/tiny-chess-01) competition
 ([bounty page](https://make.fun/bounty/tiny-chess-01)).
 
