@@ -15,8 +15,10 @@ working session, then compressed into the 4 KB entrypoint.
   middlegame and endgame by remaining material; scores are kept from
   the side-to-move's perspective and the position hash is recomputed
   by a full board scan, which is what makes the code small enough.
-- Determinism: a fixed node budget per move (130,000) and no clock
-  reads anywhere, so a game replays exactly.
+- Determinism: a fixed node budget per move (50,000 — sized so the
+  whole trial stays far inside its 1,800-second wall budget on the
+  trial's single CPU) and no clock reads anywhere, so a game replays
+  exactly.
 
 ## Protocol
 
@@ -38,5 +40,8 @@ and base85-encoded into the stub in `main.py` (4,076 bytes).
 - Snapshot/restore, hash and evaluation consistency checked over
   random self-play games.
 - Practice trials against the kit's anchor ladder (6 games each):
-  Elo 1,099 / 1,654 / 1,451 across three instances, against the house
-  baseline's practice mean of about 1,365.
+  the earlier 130,000-node build scored Elo 1,099 / 1,654 / 1,451
+  across three instances but took up to 1,151 s of wall time; the
+  shipped 50,000-node build scored Elo 1,451 in trial 0 with a total
+  wall time of 341 s, against the house baseline's practice mean of
+  about 1,365.
