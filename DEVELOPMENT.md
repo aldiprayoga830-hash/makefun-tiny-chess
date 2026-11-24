@@ -28,10 +28,8 @@ position history so the search can score repetitions as draws.
 
 ## Packing
 
-The readable source is compressed with lzma (FORMAT_ALONE, tuned
-lc/lp/pb) and base85-encoded into the stub in `main.py`, which is
-4,076 bytes as committed — under the 4,096-byte cap. The whole
-repository snapshot stays under the 8,192-byte cap.
+The readable source is lzma-compressed (FORMAT_ALONE, tuned lc/lp/pb)
+and base85-encoded into the stub in `main.py` (4,076 bytes).
 
 ## Verification
 
